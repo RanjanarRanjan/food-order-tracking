@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant - Menu Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .layout {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .left-panel {
+      flex: 1 1 40%;
+    }
+
+    .right-panel {
+      flex: 1 1 55%;
+    }
+
+    form, .search-section {
+      margin-bottom: 30px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color:  #ae18db; /*  #007bff */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #05d605b6;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #ae18db;
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="layout">
+      <!-- Left Side: Form + Search -->
+      <div class="left-panel">
+        <div class="button-group">
+            <button id="btnAllMenus">Get All Menus</button>
+        
+        </div>
+        <h2>Add New Menu</h2>
+        <form id="menuForm">
+          <input id="menuID" placeholder="Menu ID" required />
+          <input id="foodName" placeholder="Food Name" required />
+          <input id="price" placeholder="Price" type="number" required />
+          <button type="submit">Add Menu</button>
+        </form>
+
+        <div class="search-section">
+          <h3>Search Menu</h3>
+
+          <input id="menuIdInput" placeholder="Enter Menu ID" />
+          <div class="button-group">
+            <button id="btnGetMenu">Get Menu by ID</button>
+          </div>
+
+          <input id="foodNameInput" placeholder="Enter Food Name" />
+          <div class="button-group">
+            <button id="btnSearch">Search by Food Name</button>
+          </div>
+        </div>
+          
+      </div>
+
+      <!-- Right Side: Menu List -->
+      <div class="right-panel">
+        <h3>Menu List</h3>
+        <table id="menuTable">
+          <thead>
+            <tr>
+              <th>Menu ID</th>
+              <th>Food Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="menuTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/public/index.js"></script>
+</body>
+</html>

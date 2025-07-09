@@ -1,0 +1,9 @@
+{
+    "index": {
+      "fields": ["docType", "foodName"]
+    },
+    "ddoc": "menuIndexDoc",
+    "name": "menuIndex",
+    "type": "json"
+  }
+  
